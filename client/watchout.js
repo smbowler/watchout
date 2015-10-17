@@ -29,7 +29,7 @@ var drag = d3.behavior.drag()
       return d3.event.y;
     })
   });
-  
+
 
 var player = board.append('circle')
   .attr("cx", 500)
@@ -39,26 +39,6 @@ var player = board.append('circle')
   .style("fill", "red")
   .call(drag)
 
-
-
-// var drag = d3.behavior.drag()
-//   .on('drag', function(player){
-//     d3.select(this)
-//     .attr('x', function(player){
-//       return d3.event.x
-//     })
-//     .attr('y', function(player){
-//       return d3.event.y
-//     })
-//   });
-
-
-
-// var playerMove = function(player){
-//   d3.select(this)  
-//     .attr('x', player.x = d3.event.x)
-//     .attr('y', player.y = d3.event.y);
-// };
   
 
 //ATTRIBUTES
@@ -76,7 +56,7 @@ enemy();
 
 setInterval(enemy, 1000);
 
-//Drag Behavior for Player
+
 //Player should respond when touched by enemy
 //Scoreboard 
 //Different colors for enemies
@@ -87,36 +67,5 @@ setInterval(enemy, 1000);
 
 
 
-
-
-//define circle attributes
-//turn this into a function that updates position
-//use .transition, .duration and for attr, pass in Math.floor(Math.random() * 1000) 
-//since our width is 1000, the above will give us a random number between 1 and 1000
-//attr the random number generating function to cx and cy
-//for them to change location again, use setTimeout???
-
-
-
-
-
-
-
-//circles.enemy
-
-//circle.player
-
-
-
-//BASIC REQUIREMENTS
-  //create player
-
-  //make board
-
-  //drag behavior
-
-  //make enemy
-
-  //make enemy move??
 
 
