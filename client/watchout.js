@@ -15,16 +15,50 @@ var circles = board.selectAll('circle').data(data);
 //appending circle elements to the DOM with a class of enemy.
 circles.enter().append('circle').attr('class', 'enemy');
 
-var data2 = [1];
 //PLAYER - drag behavior
 //var player = board.append('rect')
 
-var player = board.append('rect')
-  .style("fill", "black")
-  .attr("x", 10)
-  .attr("y", 10)
-  .attr("width", 50)
-  .attr("height", 100);
+var drag = d3.behavior.drag()
+  //.origin(function(d){return d})
+  .on("drag", function(player){
+    d3.select(this)
+    .attr('cx', function(player){
+      return d3.event.x;
+    })
+    .attr('cy', function(player){
+      return d3.event.y;
+    })
+  });
+  
+
+var player = board.append('circle')
+  .attr("cx", 500)
+  .attr("cy", 300)
+  .attr("r", 15)
+  .attr('class', 'player')
+  .style("fill", "red")
+  .call(drag)
+
+
+
+// var drag = d3.behavior.drag()
+//   .on('drag', function(player){
+//     d3.select(this)
+//     .attr('x', function(player){
+//       return d3.event.x
+//     })
+//     .attr('y', function(player){
+//       return d3.event.y
+//     })
+//   });
+
+
+
+// var playerMove = function(player){
+//   d3.select(this)  
+//     .attr('x', player.x = d3.event.x)
+//     .attr('y', player.y = d3.event.y);
+// };
   
 
 //ATTRIBUTES
@@ -40,7 +74,7 @@ var enemyMove = circles
 };
 enemy();
 
-//setInterval(enemy, 1000);
+setInterval(enemy, 1000);
 
 //Drag Behavior for Player
 //Player should respond when touched by enemy
@@ -85,13 +119,4 @@ enemy();
 
   //make enemy move??
 
-//use class inheritance
-var Enemy = function(x, y){
-  this.x = x;
-  this.y = y;
-};
-//make getX and getY methods and assign that to enemy.prototype
-//enemy.prototype.randomposition
-//this.x = Math.floor(Math.random() * 1000)
-//this.y = Math.floor(Math.random() * 600)
 
