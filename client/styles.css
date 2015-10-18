@@ -3,12 +3,10 @@
 /* Note: an asteroid image is included in this repo.
 Feel free to use it if you like. */
 
-.svgcontainer{
-  background-color: black;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top:-50px 
-  margin-left: -150px;
-
+body {
+  background: url("http://desktopbackgroundshq.com/backgrounds/space-wallpaper-widescreen-space-backgrounds-29680.jpeg") no-repeat center center fixed;
+   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
